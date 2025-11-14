@@ -2,6 +2,8 @@ package com.example.memoapp_auth_demo.models;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -20,5 +22,6 @@ public class Memo {
 
     @ManyToOne
     @JoinColumn(name = "user_uid")
+    @JsonManagedReference
     private User user;
 }
